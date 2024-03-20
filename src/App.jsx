@@ -7,6 +7,7 @@ import * as puppyService from './services/puppyService'
 
 //pages
 import Landing from './pages/Landing/Landing'
+import PuppyList from './pages/PuppyList/PuppyList'
 
 //components
 import Nav from './components/Nav'
@@ -28,8 +29,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Landing />} />
-        <Route path='/puppies' element={ <h1>PUPPY LIST</h1>} />
-
+        <Route path='/puppies' element={<PuppyList puppies={puppies} />} />
       </Routes>
     </>
   )
