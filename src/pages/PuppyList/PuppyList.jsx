@@ -1,12 +1,12 @@
-// components 
-import PuppyCard from '../../components/PuppyCard'
+// components
+import PuppyCard from "../../components/PuppyCard"
 
-// css 
+//css
 import './PuppyList.css'
 
 const PuppyList = (props) => {
   return (
-    <main className='list'>
+    <main className="list">
       <h1>PUPPY LIST</h1>
 
       {!props.puppies.length && <h2>Oops! No puppies here!</h2>}
@@ -16,6 +16,7 @@ const PuppyList = (props) => {
           <PuppyCard puppy={puppy} key={puppy._id} />
         ))}
       </ul>
+
     </main>
   )
 }

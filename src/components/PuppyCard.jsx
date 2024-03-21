@@ -1,4 +1,4 @@
-const PuppyCard = (props) => {
+const PuppyCard = ({ puppy }) => {
   return (
     <li>
       <section>
@@ -6,8 +6,8 @@ const PuppyCard = (props) => {
           X
         </button>
       </section>
-      <h2>Puppy Name</h2>
-      <p>Puppy Age and Breed</p>
+      <h2>{puppy.name.toUpperCase()}</h2>
+      <p>A {puppy.age}-year-old {puppy.breed}</p>
     </li>
   )
 }
