@@ -14,7 +14,14 @@ import Nav from './components/Nav'
 
 
 function App() {
+  const navigate = useNavigate()
   const [puppies, setPuppies] = useState([])
+
+  const handleAddPuppy = async formData => {
+    const newPuppy = await puppyService.create(formData)
+    setPuppies([newPuppy, ...puppies])
+    navigate('/puppies')
+  }
 
   useEffect(() => {
     const fetchPuppies = async () => {
