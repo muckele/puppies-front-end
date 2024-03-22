@@ -13,7 +13,11 @@ const PuppyList = (props) => {
 
       <ul>
         {props.puppies.map((puppy) => (
-          <PuppyCard puppy={puppy} key={puppy._id} />
+          <PuppyCard 
+            puppy={puppy} 
+            key={puppy._id}
+            handleRemovePuppy={props.handleRemovePuppy}
+          />
         ))}
       </ul>
 
