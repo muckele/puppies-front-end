@@ -5,6 +5,14 @@ import { useState } from "react"
 import './NewPuppy.css'
 
 const NewPuppy = (props) => {
+    const [form, setForm] = useState({
+    name: '',
+    breed: '',
+    age: 0,
+    color: 'Grey',
+    ears: 'Button'
+  })
+
   return (
     <main className="new">
       <h1>NEW PUPPY</h1>

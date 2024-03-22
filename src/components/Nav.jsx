@@ -1,5 +1,5 @@
 // npm modules
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 
 //assets
 import logo from '../assets/logo.svg'
