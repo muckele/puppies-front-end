@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 
 // css
 import './NewPuppy.css'
@@ -13,6 +13,13 @@ const NewPuppy = (props) => {
     ears: 'Button'
   })
 
+  const [validForm, setValidForm] = useState(false)
+  const formElement = useRef()
+
+  useEffect(() => {
+		setValidForm(formElement.current.checkValidity())
+	}, [form])
+
   const handleChange = (evt) => {
     setForm({ ...form, [evt.target.name]: evt.target.value })
   }
@@ -22,10 +29,12 @@ const NewPuppy = (props) => {
     props.handleAddPuppy(form)
   }
 
+
+
   return (
     <main className="new">
       <h1>NEW PUPPY</h1>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="off" ref ={formElement} onSubmit={handleSubmit}>
         <label htmlFor="name-input">Name</label>
         <input
           required
@@ -88,7 +97,7 @@ const NewPuppy = (props) => {
           <option value="Button">Button</option>
         </select>
 
-        <button type="submit">SUBMIT</button>
+        <button type="submit" disabled={!validForm}>SUBMIT</button>
 
       </form>
     </main>
